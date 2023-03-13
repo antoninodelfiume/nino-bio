@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import NavItem from "./components/NavIteam/NavItem";
+import DropdownMenu from "./components/Dropdown/DropdownMenu";
+import { BiBellMinus } from "react-icons/bi";
+import { AiOutlinePlusCircle, AiOutlineCaretDown } from "react-icons/ai";
+import { TbBrandMessenger } from "react-icons/tb";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar>
+        <NavItem icon={<AiOutlinePlusCircle />} />
+        <NavItem icon={<BiBellMinus />} />
+        <NavItem icon={<TbBrandMessenger />} />
+        <NavItem icon={<AiOutlineCaretDown />}>
+          <DropdownMenu />
+        </NavItem>
+      </Navbar>
     </div>
   );
 }
